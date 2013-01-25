@@ -10,6 +10,7 @@ using ServiceStack.ServiceInterface.Auth;
 using ServiceStack.WebHost.Endpoints;
 using System.Runtime.Serialization;
 using System.EnterpriseServices;
+using ServiceStack.ServiceClient.Web;
 
 namespace ServiceStack.Hello
 {
@@ -96,9 +97,14 @@ namespace ServiceStack.Hello
 
     public class AuthTest
     {
+        const string BaseUrl = "https://localhost:62577/ServiceStack.Hello";
         public static void Main(string[] args)
         {
-
+            var restClient = new JsonServiceClient(BaseUrl);
+            restClient.SetCredentials("john", "test");
+            restClient.AlwaysSendBasicAuthHeader = true;
+            HelloResponse response = restClient.Get<HelloResponse>("/hello/Suraj");
+            Console.WriteLine(response.Result);
         }
     }
 }
