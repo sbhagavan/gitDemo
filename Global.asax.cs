@@ -100,6 +100,7 @@ namespace ServiceStack.Hello
         const string BaseUrl = "https://localhost:62577/ServiceStack.Hello";
         public static void Main(string[] args)
         {
+            //adding test comment
             var restClient = new JsonServiceClient(BaseUrl);
             restClient.SetCredentials("john", "test");
             restClient.AlwaysSendBasicAuthHeader = true;
