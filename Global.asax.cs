@@ -96,6 +96,9 @@ namespace ServiceStack.Hello
 
     public class AuthTest
     {
+        public static void Main(string[] args)
+        {
 
+        }
     }
 }
