@@ -108,5 +108,12 @@ namespace ServiceStack.Hello
             HelloResponse response = restClient.Get<HelloResponse>("/hello/Suraj");
             Console.WriteLine(response.Result);
         }
+
+
+
+        public void TEST()
+        {
+
+        }
     }
 }
